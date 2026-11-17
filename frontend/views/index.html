@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details - Frontend</title>
+    <style>
+      body {
+        background-color: rgb(208, 241, 150);
+        font-family: Arial, sans-serif;
+      }
+      .heading {
+        font-size: 35px;
+        text-align: center;
+        color: rgb(12, 18, 198);
+      }
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <p class="heading">Add Employee Details (Node.js Frontend)</p>
+
+      <form action="/submit" method="POST">
+        <label for="firstname">First Name</label><br />
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          placeholder="Enter first name"
+          required
+        /><br /><br />
+
+        <label for="lastname">Last Name</label><br />
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Enter last name"
+          required
+        /><br /><br />
+
+        <label for="phoneno">Phone No</label><br />
+        <input
+          type="text"
+          name="phoneno"
+          id="phoneno"
+          placeholder="Enter phone no"
+          required
+        /><br /><br />
+
+        <label for="location">Location</label><br />
+        <input
+          type="text"
+          name="location"
+          id="location"
+          placeholder="Enter location"
+          required
+        /><br /><br />
+
+        <input type="submit" value="Submit to Backend" />
+      </form>
+    </div>
+  </body>
+</html>

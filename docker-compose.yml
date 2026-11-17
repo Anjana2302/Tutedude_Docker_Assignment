@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: ./backend
+    container_name: flask_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb+srv://anjanadeveloper23_db_user:tBkRqIKw6XfdOCt5@cluster0.nhtdkvi.mongodb.net
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: node_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Page</title>
+    <style>
+      body {
+        background-color: rgb(208, 241, 150);
+      }
+      .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(12, 18, 198);
+      }
+      .error-msg {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      "
+    >
+      <p class="heading">Add To-Do Item</p>
+
+      <form action="/submittodoitem" method="POST">
+        <label for="itemId">Item ID:</label>
+        <input
+          type="text"
+          id="itemId"
+          name="itemId"
+          placeholder="Enter Item ID"
+        /><br /><br />
+        <label for="itemUuid">Item UUID:</label>
+        <input
+          type="text"
+          id="itemUuid"
+          name="itemUuid"
+          placeholder="Enter Item UUID"
+        /><br /><br />
+
+        <label for="itemHash">Item Hash:</label>
+        <input
+          type="text"
+          id="itemHash"
+          name="itemHash"
+          placeholder="Enter Item Hash"
+        /><br /><br />
+
+        <label for="itemName">Item Name:</label>
+        <input
+          type="text"
+          name="itemName"
+          id="itemName"
+          placeholder="Enter Item Name"
+          required
+        />
+        <br /><br />
+
+        <label for="itemDescription">Item Description: </label>
+        <textarea
+          name="itemDescription"
+          id="itemDescription"
+          placeholder="Enter Item Description"
+          required
+        ></textarea>
+        <br /><br />
+
+        <input type="submit" value="Submit" />
+
+        <% if (error){ %>
+        <div class="error-msg"><%= error %></div>
+        <% } %>
+      </form>
+
+      <br />
+    </div>
+  </body>
+</html>
